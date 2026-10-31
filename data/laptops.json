@@ -1,0 +1,2073 @@
+{
+  "market": "IN",
+  "currency": "INR",
+  "observedAt": "2026-10-30T06:00:00Z",
+  "source": "vendor_spec_sheet",
+  "note": "Seed catalogue entered from vendor spec sheets for the MVP slice. One observed price per variant, INR minor units derived at seed time. Popularity is an editorial seed order, not analytics data.",
+  "brands": [
+    {
+      "slug": "asus",
+      "name": "ASUS",
+      "description": "Taiwanese manufacturer covering budget Vivobooks, OLED ultrabooks, TUF and ROG gaming lines.",
+      "families": [
+        {
+          "name": "Vivobook 15 X1504VA",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-03-15",
+          "variants": [
+            {
+              "code": "X1504VA-NJ321WS",
+              "cpuFamily": "Intel Core i3",
+              "cpuModel": "Core i3-1315U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel UHD Graphics",
+              "ramGb": 8,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 45990
+            },
+            {
+              "code": "X1504VA-NJ521WS",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1335U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 62990
+            },
+            {
+              "code": "X1504VA-NJ741WS",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-1355U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 74990
+            }
+          ]
+        },
+        {
+          "name": "Vivobook 16X K3605ZF",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-04-18",
+          "variants": [
+            {
+              "code": "K3605ZF-MB541WS",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-12500H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 2050",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 16.0,
+              "touch": false,
+              "priceInr": 74990
+            },
+            {
+              "code": "K3605ZF-MB741WS",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-12700H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 3050",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 16.0,
+              "touch": false,
+              "priceInr": 89990
+            }
+          ]
+        },
+        {
+          "name": "Vivobook S 14 OLED S5406MA",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-05-10",
+          "variants": [
+            {
+              "code": "S5406MA-PP521WS",
+              "cpuFamily": "Intel Core Ultra 5",
+              "cpuModel": "Core Ultra 5 125H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Arc Graphics",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 89990
+            },
+            {
+              "code": "S5406MA-PP751WS",
+              "cpuFamily": "Intel Core Ultra 7",
+              "cpuModel": "Core Ultra 7 155H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Arc Graphics",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 109990
+            }
+          ]
+        },
+        {
+          "name": "Zenbook 14 OLED UX3405MA",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-02-20",
+          "variants": [
+            {
+              "code": "UX3405MA-PZ521WS",
+              "cpuFamily": "Intel Core Ultra 5",
+              "cpuModel": "Core Ultra 5 125H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Arc Graphics",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": true,
+              "priceInr": 99990
+            },
+            {
+              "code": "UX3405MA-PZ751WS",
+              "cpuFamily": "Intel Core Ultra 7",
+              "cpuModel": "Core Ultra 7 155H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Arc Graphics",
+              "ramGb": 32,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 14.0,
+              "touch": true,
+              "priceInr": 129990
+            }
+          ]
+        },
+        {
+          "name": "TUF Gaming A15 FA506NFR",
+          "year": 2024,
+          "formFactor": "gaming",
+          "releaseDate": "2024-04-05",
+          "variants": [
+            {
+              "code": "FA506NFR-HN045W",
+              "cpuFamily": "AMD Ryzen 5",
+              "cpuModel": "Ryzen 5 7535HS",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 2050",
+              "ramGb": 8,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 64990
+            },
+            {
+              "code": "FA506NFR-HN084W",
+              "cpuFamily": "AMD Ryzen 7",
+              "cpuModel": "Ryzen 7 7435HS",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4050",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 79990
+            },
+            {
+              "code": "FA506NFR-HN110W",
+              "cpuFamily": "AMD Ryzen 7",
+              "cpuModel": "Ryzen 7 7435HS",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4060",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 94990
+            }
+          ]
+        },
+        {
+          "name": "ROG Zephyrus G14 GA403UI",
+          "year": 2024,
+          "formFactor": "gaming",
+          "releaseDate": "2024-06-01",
+          "variants": [
+            {
+              "code": "GA403UI-QS024W",
+              "cpuFamily": "AMD Ryzen 9",
+              "cpuModel": "Ryzen 9 8945HS",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4060",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 154990
+            },
+            {
+              "code": "GA403UI-QS041W",
+              "cpuFamily": "AMD Ryzen 9",
+              "cpuModel": "Ryzen 9 8945HS",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4070",
+              "ramGb": 32,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 179990
+            }
+          ]
+        },
+        {
+          "name": "ProArt P16 H7606WI",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-08-12",
+          "variants": [
+            {
+              "code": "H7606WI-ME014WS",
+              "cpuFamily": "AMD Ryzen AI 9",
+              "cpuModel": "Ryzen AI 9 HX 370",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4070",
+              "ramGb": 32,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 16.0,
+              "touch": true,
+              "priceInr": 249990
+            }
+          ]
+        },
+        {
+          "name": "Chromebook Plus CX34",
+          "year": 2024,
+          "formFactor": "chromebook",
+          "releaseDate": "2024-01-20",
+          "variants": [
+            {
+              "code": "CX34-CB521",
+              "cpuFamily": "Intel Core i3",
+              "cpuModel": "Core i3-1215U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel UHD Graphics",
+              "ramGb": 8,
+              "storageGb": 256,
+              "storageType": "ssd",
+              "os": "chromeos",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 44990
+            }
+          ]
+        },
+        {
+          "name": "Vivobook 14 X1404VA",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-03-15",
+          "variants": [
+            {
+              "code": "X1404VA-NK321WS",
+              "cpuFamily": "Intel Core i3",
+              "cpuModel": "Core i3-1315U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel UHD Graphics",
+              "ramGb": 8,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 42990
+            },
+            {
+              "code": "X1404VA-NK521WS",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1335U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 59990
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "lenovo",
+      "name": "Lenovo",
+      "description": "Chinese manufacturer of IdeaPad, ThinkPad, Yoga and Legion lines.",
+      "families": [
+        {
+          "name": "IdeaPad Slim 3 15IRU8",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-02-08",
+          "variants": [
+            {
+              "code": "82X70034IN",
+              "cpuFamily": "Intel Core i3",
+              "cpuModel": "Core i3-1315U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel UHD Graphics",
+              "ramGb": 8,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 46990
+            },
+            {
+              "code": "82X70036IN",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1335U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 61990
+            }
+          ]
+        },
+        {
+          "name": "IdeaPad Slim 5 14IRL8",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-09-14",
+          "variants": [
+            {
+              "code": "82XD0069IN",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-13420H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel UHD Graphics",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 69990
+            },
+            {
+              "code": "82XD0072IN",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-13620H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel UHD Graphics",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 84990
+            }
+          ]
+        },
+        {
+          "name": "ThinkPad E14 Gen 5",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-07-01",
+          "variants": [
+            {
+              "code": "21JK000DIG",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1335U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 79990
+            },
+            {
+              "code": "21JKA0N2IG",
+              "cpuFamily": "AMD Ryzen 5",
+              "cpuModel": "Ryzen 5 7530U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Radeon Graphics",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 74990
+            }
+          ]
+        },
+        {
+          "name": "LOQ 15IRX9",
+          "year": 2024,
+          "formFactor": "gaming",
+          "releaseDate": "2024-03-01",
+          "variants": [
+            {
+              "code": "83DV00BJIN",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-13450HX",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 3050",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 79990
+            },
+            {
+              "code": "83DV00DFIN",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-13650HX",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4060",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 104990
+            }
+          ]
+        },
+        {
+          "name": "Legion 5 15IRX9",
+          "year": 2024,
+          "formFactor": "gaming",
+          "releaseDate": "2024-04-12",
+          "variants": [
+            {
+              "code": "83DG004RIN",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-13650HX",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4060",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 134990
+            },
+            {
+              "code": "83DG00AEIN",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-14650HX",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4070",
+              "ramGb": 32,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 169990
+            }
+          ]
+        },
+        {
+          "name": "Yoga Slim 6 14IRP8",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-08-20",
+          "variants": [
+            {
+              "code": "82WV003DIN",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-13500H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 89990
+            },
+            {
+              "code": "82WV0040IN",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-13700H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 104990
+            }
+          ]
+        },
+        {
+          "name": "IdeaPad Flex 5 14IRU8",
+          "year": 2023,
+          "formFactor": "convertible",
+          "releaseDate": "2023-06-10",
+          "variants": [
+            {
+              "code": "82Y0005HIN",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1335U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": true,
+              "priceInr": 71990
+            }
+          ]
+        },
+        {
+          "name": "Legion Slim 5 14AHP9",
+          "year": 2024,
+          "formFactor": "gaming",
+          "releaseDate": "2024-05-25",
+          "variants": [
+            {
+              "code": "83D6000XIN",
+              "cpuFamily": "AMD Ryzen 7",
+              "cpuModel": "Ryzen 7 8845HS",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4060",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 144990
+            }
+          ]
+        },
+        {
+          "name": "IdeaPad Slim 1 15AMN7",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-03-10",
+          "variants": [
+            {
+              "code": "82VG00LJIN",
+              "cpuFamily": "AMD Ryzen 3",
+              "cpuModel": "Ryzen 3 7320U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Radeon 610M",
+              "ramGb": 8,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 34990
+            }
+          ]
+        },
+        {
+          "name": "ThinkBook 15 G4 IAP",
+          "year": 2022,
+          "formFactor": "clamshell",
+          "releaseDate": "2022-08-01",
+          "variants": [
+            {
+              "code": "21DJ00LQIN",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1235U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 67990
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "dell",
+      "name": "Dell",
+      "description": "US manufacturer of Inspiron, Latitude, XPS, G-series and Alienware lines.",
+      "families": [
+        {
+          "name": "Inspiron 15 3520",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-02-01",
+          "variants": [
+            {
+              "code": "D560897WIN9B",
+              "cpuFamily": "Intel Core i3",
+              "cpuModel": "Core i3-1215U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel UHD Graphics",
+              "ramGb": 8,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 42990
+            },
+            {
+              "code": "D560898WIN9B",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1235U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 58990
+            }
+          ]
+        },
+        {
+          "name": "Inspiron 14 5440",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-01-10",
+          "variants": [
+            {
+              "code": "D566123WIN9",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1340P",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 74990
+            },
+            {
+              "code": "D566124WIN9",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-150U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 89990
+            }
+          ]
+        },
+        {
+          "name": "Latitude 3450",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-02-15",
+          "variants": [
+            {
+              "code": "LAT3450I5",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1335U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 77990
+            },
+            {
+              "code": "LAT3450I7",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-1355U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 92990
+            }
+          ]
+        },
+        {
+          "name": "G15 5530",
+          "year": 2023,
+          "formFactor": "gaming",
+          "releaseDate": "2023-03-15",
+          "variants": [
+            {
+              "code": "G15-5530I5",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-13450HX",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 3050",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 84990
+            },
+            {
+              "code": "G15-5530I7",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-13650HX",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4060",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 114990
+            }
+          ]
+        },
+        {
+          "name": "Alienware m16 R2",
+          "year": 2024,
+          "formFactor": "gaming",
+          "releaseDate": "2024-02-01",
+          "variants": [
+            {
+              "code": "AW-M16R2-U7",
+              "cpuFamily": "Intel Core Ultra 7",
+              "cpuModel": "Core Ultra 7 155H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4060",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 16.0,
+              "touch": false,
+              "priceInr": 174990
+            },
+            {
+              "code": "AW-M16R2-U9",
+              "cpuFamily": "Intel Core Ultra 9",
+              "cpuModel": "Core Ultra 9 185H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4070",
+              "ramGb": 32,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 16.0,
+              "touch": false,
+              "priceInr": 209990
+            }
+          ]
+        },
+        {
+          "name": "XPS 13 9340",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-01-25",
+          "variants": [
+            {
+              "code": "XPS9340-U5",
+              "cpuFamily": "Intel Core Ultra 5",
+              "cpuModel": "Core Ultra 5 125H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Arc Graphics",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 13.4,
+              "touch": true,
+              "priceInr": 129990
+            },
+            {
+              "code": "XPS9340-U7",
+              "cpuFamily": "Intel Core Ultra 7",
+              "cpuModel": "Core Ultra 7 155H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Arc Graphics",
+              "ramGb": 32,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 13.4,
+              "touch": true,
+              "priceInr": 164990
+            }
+          ]
+        },
+        {
+          "name": "Vostro 3520",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-04-01",
+          "variants": [
+            {
+              "code": "V3520-I3-8-512",
+              "cpuFamily": "Intel Core i3",
+              "cpuModel": "Core i3-1215U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel UHD Graphics",
+              "ramGb": 8,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 39990
+            },
+            {
+              "code": "V3520-I5-16-512",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1235U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 54990
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "hp",
+      "name": "HP",
+      "description": "US manufacturer of Pavilion, Victus, OMEN, EliteBook and Envy lines.",
+      "families": [
+        {
+          "name": "15s fq5329TU",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-01-05",
+          "variants": [
+            {
+              "code": "8F2K3PA",
+              "cpuFamily": "Intel Core i3",
+              "cpuModel": "Core i3-1215U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel UHD Graphics",
+              "ramGb": 8,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 39990
+            },
+            {
+              "code": "8F2K4PA",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1235U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 52990
+            }
+          ]
+        },
+        {
+          "name": "Pavilion Plus 14 ew0023TU",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-03-22",
+          "variants": [
+            {
+              "code": "9E2K1PA",
+              "cpuFamily": "Intel Core Ultra 5",
+              "cpuModel": "Core Ultra 5 125H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Arc Graphics",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 79990
+            },
+            {
+              "code": "9E2K2PA",
+              "cpuFamily": "Intel Core Ultra 7",
+              "cpuModel": "Core Ultra 7 155H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Arc Graphics",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 99990
+            }
+          ]
+        },
+        {
+          "name": "Victus 15 fa1354TX",
+          "year": 2024,
+          "formFactor": "gaming",
+          "releaseDate": "2024-02-18",
+          "variants": [
+            {
+              "code": "8X7K1PA",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-12450H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 3050",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 64990
+            },
+            {
+              "code": "8X7K2PA",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-13500H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4050",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 74990
+            }
+          ]
+        },
+        {
+          "name": "OMEN 16 xf0064AX",
+          "year": 2024,
+          "formFactor": "gaming",
+          "releaseDate": "2024-04-20",
+          "variants": [
+            {
+              "code": "9Y3K1PA",
+              "cpuFamily": "AMD Ryzen 7",
+              "cpuModel": "Ryzen 7 7840HS",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4060",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 16.1,
+              "touch": false,
+              "priceInr": 119990
+            },
+            {
+              "code": "9Y3K2PA",
+              "cpuFamily": "AMD Ryzen 9",
+              "cpuModel": "Ryzen 9 7940HS",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4070",
+              "ramGb": 32,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 16.1,
+              "touch": false,
+              "priceInr": 149990
+            }
+          ]
+        },
+        {
+          "name": "EliteBook 640 G10",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-05-12",
+          "variants": [
+            {
+              "code": "8A5K1PA",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1335U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 89990
+            },
+            {
+              "code": "8A5K2PA",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-1355U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 109990
+            }
+          ]
+        },
+        {
+          "name": "Envy x360 14 fc0023TU",
+          "year": 2024,
+          "formFactor": "convertible",
+          "releaseDate": "2024-05-05",
+          "variants": [
+            {
+              "code": "9G8K1PA",
+              "cpuFamily": "Intel Core Ultra 5",
+              "cpuModel": "Core Ultra 5 125U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Graphics",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": true,
+              "priceInr": 89990
+            },
+            {
+              "code": "9G8K2PA",
+              "cpuFamily": "Intel Core Ultra 7",
+              "cpuModel": "Core Ultra 7 155U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Graphics",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": true,
+              "priceInr": 109990
+            }
+          ]
+        },
+        {
+          "name": "Laptop 14 ep0010TU",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-09-01",
+          "variants": [
+            {
+              "code": "8Q3K1PA",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1335U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 61990
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "acer",
+      "name": "Acer",
+      "description": "Taiwanese manufacturer of Aspire, Swift, Nitro and Predator lines.",
+      "families": [
+        {
+          "name": "Aspire 3 A315-59",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-01-18",
+          "variants": [
+            {
+              "code": "A315-59-31UT",
+              "cpuFamily": "Intel Core i3",
+              "cpuModel": "Core i3-1215U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel UHD Graphics",
+              "ramGb": 8,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 37990
+            },
+            {
+              "code": "A315-59-51UT",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1235U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 8,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 44990
+            }
+          ]
+        },
+        {
+          "name": "Aspire 5 A515-58M",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-01-28",
+          "variants": [
+            {
+              "code": "A515-58M-56HZ",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1335U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 59990
+            },
+            {
+              "code": "A515-58M-76HZ",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-1355U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 74990
+            }
+          ]
+        },
+        {
+          "name": "Swift Go 14 SFG14-73",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-03-30",
+          "variants": [
+            {
+              "code": "SFG14-73-53QZ",
+              "cpuFamily": "Intel Core Ultra 5",
+              "cpuModel": "Core Ultra 5 125H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Arc Graphics",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 79990
+            },
+            {
+              "code": "SFG14-73-75QZ",
+              "cpuFamily": "Intel Core Ultra 7",
+              "cpuModel": "Core Ultra 7 155H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Arc Graphics",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 94990
+            }
+          ]
+        },
+        {
+          "name": "Nitro V 15 ANV15-51",
+          "year": 2024,
+          "formFactor": "gaming",
+          "releaseDate": "2024-02-25",
+          "variants": [
+            {
+              "code": "ANV15-51-51QN",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-13420H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4050",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 74990
+            },
+            {
+              "code": "ANV15-51-71QN",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-13620H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4060",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 94990
+            }
+          ]
+        },
+        {
+          "name": "Predator Helios Neo 16 PHN16-72",
+          "year": 2024,
+          "formFactor": "gaming",
+          "releaseDate": "2024-05-15",
+          "variants": [
+            {
+              "code": "PHN16-72-71PZ",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-14650HX",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4060",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 16.0,
+              "touch": false,
+              "priceInr": 129990
+            },
+            {
+              "code": "PHN16-72-91PZ",
+              "cpuFamily": "Intel Core i9",
+              "cpuModel": "Core i9-14900HX",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4070",
+              "ramGb": 32,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 16.0,
+              "touch": false,
+              "priceInr": 169990
+            }
+          ]
+        },
+        {
+          "name": "Aspire Vero AV15-53P",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-02-01",
+          "variants": [
+            {
+              "code": "AV15-53P-56KZ",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1335U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 64990
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "msi",
+      "name": "MSI",
+      "description": "Taiwanese manufacturer of Modern, Thin, Katana, Cyborg and Stealth lines.",
+      "families": [
+        {
+          "name": "Modern 14 C12M",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-02-10",
+          "variants": [
+            {
+              "code": "MODERN14C12M-022IN",
+              "cpuFamily": "Intel Core i3",
+              "cpuModel": "Core i3-1215U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel UHD Graphics",
+              "ramGb": 8,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 42990
+            },
+            {
+              "code": "MODERN14C12M-053IN",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-12450H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel UHD Graphics",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 52990
+            }
+          ]
+        },
+        {
+          "name": "Thin 15 B13UC",
+          "year": 2024,
+          "formFactor": "gaming",
+          "releaseDate": "2024-02-05",
+          "variants": [
+            {
+              "code": "THIN15B13UC-1412IN",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-13420H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 3050",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 69990
+            },
+            {
+              "code": "THIN15B13UC-2031IN",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-13620H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4050",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 84990
+            }
+          ]
+        },
+        {
+          "name": "Katana 15 B13VFK",
+          "year": 2023,
+          "formFactor": "gaming",
+          "releaseDate": "2023-04-01",
+          "variants": [
+            {
+              "code": "KATANA15B13VFK-081IN",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-13620H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4060",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 109990
+            },
+            {
+              "code": "KATANA15B13VFK-222IN",
+              "cpuFamily": "Intel Core i9",
+              "cpuModel": "Core i9-13900H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4070",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 134990
+            }
+          ]
+        },
+        {
+          "name": "Cyborg 15 A12VE",
+          "year": 2023,
+          "formFactor": "gaming",
+          "releaseDate": "2023-06-18",
+          "variants": [
+            {
+              "code": "CYBORG15A12VE-2031IN",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-12450H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4050",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 74990
+            },
+            {
+              "code": "CYBORG15A12VE-2412IN",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-12650H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4060",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 89990
+            }
+          ]
+        },
+        {
+          "name": "Stealth 16 AI Studio A1VGG",
+          "year": 2024,
+          "formFactor": "gaming",
+          "releaseDate": "2024-06-20",
+          "variants": [
+            {
+              "code": "STEALTH16A1VGG-014IN",
+              "cpuFamily": "Intel Core Ultra 9",
+              "cpuModel": "Core Ultra 9 185H",
+              "gpuFamily": "nvidia",
+              "gpuModel": "GeForce RTX 4070",
+              "ramGb": 32,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-pro",
+              "screenSizeIn": 16.0,
+              "touch": false,
+              "priceInr": 189990
+            }
+          ]
+        },
+        {
+          "name": "Prestige 14 Evo B13M",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-04-10",
+          "variants": [
+            {
+              "code": "PRESTIGE14EVOB13M-028IN",
+              "cpuFamily": "Intel Core Ultra 7",
+              "cpuModel": "Core Ultra 7 155H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Arc Graphics",
+              "ramGb": 32,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 129990
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "apple",
+      "name": "Apple",
+      "description": "US manufacturer of the MacBook Air and MacBook Pro lines.",
+      "families": [
+        {
+          "name": "MacBook Air 13 M2",
+          "year": 2022,
+          "formFactor": "clamshell",
+          "releaseDate": "2022-07-15",
+          "variants": [
+            {
+              "code": "MLY33HN/A",
+              "cpuFamily": "Apple M2",
+              "cpuModel": "Apple M2 8-core",
+              "gpuFamily": "apple",
+              "gpuModel": "Apple M2 8-core GPU",
+              "ramGb": 8,
+              "storageGb": 256,
+              "storageType": "ssd",
+              "os": "macos",
+              "screenSizeIn": 13.6,
+              "touch": false,
+              "priceInr": 99900
+            },
+            {
+              "code": "MLY43HN/A",
+              "cpuFamily": "Apple M2",
+              "cpuModel": "Apple M2 8-core",
+              "gpuFamily": "apple",
+              "gpuModel": "Apple M2 10-core GPU",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "macos",
+              "screenSizeIn": 13.6,
+              "touch": false,
+              "priceInr": 134900
+            }
+          ]
+        },
+        {
+          "name": "MacBook Air 15 M3",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-03-08",
+          "variants": [
+            {
+              "code": "MRYM3HN/A",
+              "cpuFamily": "Apple M3",
+              "cpuModel": "Apple M3 8-core",
+              "gpuFamily": "apple",
+              "gpuModel": "Apple M3 10-core GPU",
+              "ramGb": 8,
+              "storageGb": 256,
+              "storageType": "ssd",
+              "os": "macos",
+              "screenSizeIn": 15.3,
+              "touch": false,
+              "priceInr": 134900
+            },
+            {
+              "code": "MRYN3HN/A",
+              "cpuFamily": "Apple M3",
+              "cpuModel": "Apple M3 8-core",
+              "gpuFamily": "apple",
+              "gpuModel": "Apple M3 10-core GPU",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "macos",
+              "screenSizeIn": 15.3,
+              "touch": false,
+              "priceInr": 164900
+            }
+          ]
+        },
+        {
+          "name": "MacBook Pro 14 M3",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-11-07",
+          "variants": [
+            {
+              "code": "MRX33HN/A",
+              "cpuFamily": "Apple M3",
+              "cpuModel": "Apple M3 8-core",
+              "gpuFamily": "apple",
+              "gpuModel": "Apple M3 10-core GPU",
+              "ramGb": 8,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "macos",
+              "screenSizeIn": 14.2,
+              "touch": false,
+              "priceInr": 169900
+            },
+            {
+              "code": "MRX63HN/A",
+              "cpuFamily": "Apple M3 Pro",
+              "cpuModel": "Apple M3 Pro 11-core",
+              "gpuFamily": "apple",
+              "gpuModel": "Apple M3 Pro 14-core GPU",
+              "ramGb": 18,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "macos",
+              "screenSizeIn": 14.2,
+              "touch": false,
+              "priceInr": 199900
+            }
+          ]
+        },
+        {
+          "name": "MacBook Pro 16 M4 Pro",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-11-08",
+          "variants": [
+            {
+              "code": "MX2H3HN/A",
+              "cpuFamily": "Apple M4 Pro",
+              "cpuModel": "Apple M4 Pro 12-core",
+              "gpuFamily": "apple",
+              "gpuModel": "Apple M4 Pro 16-core GPU",
+              "ramGb": 24,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "macos",
+              "screenSizeIn": 16.2,
+              "touch": false,
+              "priceInr": 249900
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "samsung",
+      "name": "Samsung",
+      "description": "Korean manufacturer of the Galaxy Book line.",
+      "families": [
+        {
+          "name": "Galaxy Book4 15",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-02-26",
+          "variants": [
+            {
+              "code": "NP750XGJ-KG2IN",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1335U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 74990
+            },
+            {
+              "code": "NP750XGJ-KG4IN",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-1355U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 89990
+            }
+          ]
+        },
+        {
+          "name": "Galaxy Book4 Pro 360",
+          "year": 2024,
+          "formFactor": "convertible",
+          "releaseDate": "2024-02-26",
+          "variants": [
+            {
+              "code": "NP960QGK-KG1IN",
+              "cpuFamily": "Intel Core Ultra 7",
+              "cpuModel": "Core Ultra 7 155H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Arc Graphics",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 16.0,
+              "touch": true,
+              "priceInr": 139990
+            }
+          ]
+        },
+        {
+          "name": "Galaxy Book3 15",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-02-17",
+          "variants": [
+            {
+              "code": "NP750XFG-KB2IN",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1335U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 8,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 64990
+            }
+          ]
+        },
+        {
+          "name": "Galaxy Book4 Edge 15",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-06-18",
+          "variants": [
+            {
+              "code": "NP750XQA-KB1IN",
+              "cpuFamily": "Qualcomm Snapdragon X",
+              "cpuModel": "Snapdragon X Plus X1P-42-100",
+              "gpuFamily": "integrated",
+              "gpuModel": "Qualcomm Adreno",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 99990
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "lg",
+      "name": "LG",
+      "description": "Korean manufacturer of the Gram lightweight line and UltraPC.",
+      "families": [
+        {
+          "name": "Gram 16 16Z90R",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-03-01",
+          "variants": [
+            {
+              "code": "16Z90R-G.AJ55A2",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1340P",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 16.0,
+              "touch": false,
+              "priceInr": 109990
+            },
+            {
+              "code": "16Z90R-G.AJ75A2",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-1360P",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 1024,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 16.0,
+              "touch": false,
+              "priceInr": 134990
+            }
+          ]
+        },
+        {
+          "name": "Gram 17 17Z90R",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-03-01",
+          "variants": [
+            {
+              "code": "17Z90R-G.AJ55A2",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1340P",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 17.0,
+              "touch": false,
+              "priceInr": 119990
+            }
+          ]
+        },
+        {
+          "name": "UltraPC 15 15U50R",
+          "year": 2024,
+          "formFactor": "clamshell",
+          "releaseDate": "2024-03-10",
+          "variants": [
+            {
+              "code": "15U50R-G.AJ51A2",
+              "cpuFamily": "AMD Ryzen 5",
+              "cpuModel": "Ryzen 5 7530U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Radeon Graphics",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 62990
+            },
+            {
+              "code": "15U50R-G.AJ55A2",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1335U",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 67990
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "realme",
+      "name": "realme",
+      "description": "Chinese manufacturer of the realme Book line.",
+      "families": [
+        {
+          "name": "realme Book Prime",
+          "year": 2022,
+          "formFactor": "clamshell",
+          "releaseDate": "2022-05-20",
+          "variants": [
+            {
+              "code": "RMBP-1132H-I5",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-11320H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 49990
+            }
+          ]
+        },
+        {
+          "name": "realme Book 2 Pro",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-08-05",
+          "variants": [
+            {
+              "code": "RMB2P-13500H-I5",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-13500H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 64990
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "infinix",
+      "name": "Infinix",
+      "description": "Hong Kong manufacturer of the INBook and Zero Book lines.",
+      "families": [
+        {
+          "name": "INBook X2 Slim",
+          "year": 2022,
+          "formFactor": "clamshell",
+          "releaseDate": "2022-06-15",
+          "variants": [
+            {
+              "code": "XL23-I3-8-256",
+              "cpuFamily": "Intel Core i3",
+              "cpuModel": "Core i3-1115G4",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel UHD Graphics",
+              "ramGb": 8,
+              "storageGb": 256,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 29990
+            },
+            {
+              "code": "XL23-I5-16-512",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-1135G7",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 37990
+            }
+          ]
+        },
+        {
+          "name": "Zero Book Ultra",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-07-20",
+          "variants": [
+            {
+              "code": "ZBU-I7-13700H",
+              "cpuFamily": "Intel Core i7",
+              "cpuModel": "Core i7-13700H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 74990
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "xiaomi",
+      "name": "Xiaomi",
+      "description": "Chinese manufacturer of the Redmi Book line.",
+      "families": [
+        {
+          "name": "Redmi Book Pro 14",
+          "year": 2023,
+          "formFactor": "clamshell",
+          "releaseDate": "2023-04-25",
+          "variants": [
+            {
+              "code": "RMBP14-I5-12450H",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-12450H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel UHD Graphics",
+              "ramGb": 16,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 14.0,
+              "touch": false,
+              "priceInr": 59990
+            }
+          ]
+        },
+        {
+          "name": "Redmi Book 15",
+          "year": 2022,
+          "formFactor": "clamshell",
+          "releaseDate": "2022-03-01",
+          "variants": [
+            {
+              "code": "RMB15-I5-11300H",
+              "cpuFamily": "Intel Core i5",
+              "cpuModel": "Core i5-11300H",
+              "gpuFamily": "integrated",
+              "gpuModel": "Intel Iris Xe",
+              "ramGb": 8,
+              "storageGb": 512,
+              "storageType": "ssd",
+              "os": "windows-11-home",
+              "screenSizeIn": 15.6,
+              "touch": false,
+              "priceInr": 44990
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
