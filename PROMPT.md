@@ -254,7 +254,7 @@ P guided finder and decision tools.
 
 | Id | Capability area | What the user can do | Source domain(s) | Priority | Variant note |
 | --- | --- | --- | --- | --- | --- |
-| RANK-01 | Rankings and best-of lists | Open a curated list for a budget ("best laptop under ₹60,000") with a shortlist and a reason per pick | smartprix.com (price lists), mysmartprice.com (`best-laptops-under-60000-price-list-in-india.html`), laptopvslaptop.com (`best-budget-laptops`), rtings.com (`by-price/under-500`) | MVP | The page is both a ranking and an SEO landing page (`SEO-03`); one page, two jobs |
+| RANK-01 | Rankings and best-of lists | Open a curated list for a budget ("best laptop under ₹60,000") with a shortlist and a reason per pick | smartprix.com (price lists), mysmartprice.com (`/computer/pricelist/laptops-under-60000-price-list-in-india.html`), laptopvslaptop.com (`best-budget-laptops`), rtings.com (`by-price/under-500`) | MVP | The page is both a ranking and an SEO landing page (`SEO-03`); one page, two jobs |
 | RANK-02 | Rankings and best-of lists | Open a best-by-use-case list (gaming, college, business, programming, video editing, photo editing, music production, work from home) | rtings.com (`best/by-usage/{usage}`), mysmartprice.com (best laptops for students), laptopvslaptop.com (`best-gaming-laptops`) | MVP | Each list states its scoring weights and update date (`RANK-09`) |
 | RANK-03 | Rankings and best-of lists | Open a best-by-brand or best-by-form-factor list | laptopvslaptop.com (`best-acer-laptops`, `best-2-in-1-laptops`), rtings.com (`best/brands`, `best/by-type/2-in-1`) | MVP | — |
 | RANK-04 | Rankings and best-of lists | See where a product sits in its group and overall ("Group Rank #98/178", "Overall Rank #1547/1902") | smartprix.com | MVP | Group = price band + form factor; the group definition must be printed on the page |
@@ -532,8 +532,8 @@ Rules that apply to all entities:
 | `group_key` | string → `spec_group.key` | |
 | `label` | string | "Max brightness" |
 | `value_type` | enum | `number`, `text`, `bool`, `enum` |
-| `unit` | enum, nullable | `nits`, `mm`, `kg`, `dB`, `Wh`, `GB`, `inches`, `%`, `ms` |
-| `unit_family` | enum, nullable | `length`, `mass`, `volume_energy`, `sound`, `storage`, `time` — drives 6.2 |
+| `unit` | enum, nullable | `nits`, `mm`, `cm`, `inches`, `kg`, `g`, `lb`, `dB`, `dB(A)`, `Wh`, `GB`, `TB`, `GiB`, `MHz`, `GHz`, `Hz`, `fps`, `points`, `MB/s`, `IOPS`, `°C`, `ΔE`, `%`, `ms`, `minutes` |
+| `unit_family` | enum, nullable | `length`, `mass`, `volume_energy`, `sound`, `storage`, `frequency`, `time`, `ratio`, `brightness`, `resolution`, `temperature`, `colour_delta`, `rate`, `count` — every unit in 7.1 belongs to exactly one family, and a value is comparable only inside its family (6.2). `rate` (MB/s, IOPS, fps) and `count` (points, ports) carry no cross-unit conversion |
 | `direction` | enum | `higher_better`, `lower_better`, `neutral` — drives 6.4 |
 | `comparable` | bool | `false` for prose fields |
 | `help_text` | text | `DB-08` tooltip |
@@ -623,7 +623,7 @@ Aggregate (`product_rating`): `product_id`, `average`, `count`, `distribution` (
 | --- | --- | --- |
 | `key` | string, unique | `display.brightness_max`, `battery.web_browsing`, `cpu.geekbench6_multi` |
 | `label`, `group_key` | | group: `design`, `display`, `battery`, `interface`, `connectivity`, `configuration`, `performance`, `thermals`, `gaming`, `audio` |
-| `unit`, `unit_family` | enum | |
+| `unit`, `unit_family` | enum | same enums as `spec_key` (5.5), so a test value and a spec value can share one comparison rule |
 | `direction` | enum | `higher_better` / `lower_better` |
 | `conditions` | json | preset, brightness target, distance, ambient temperature, benchmark version (`TEST-08`) |
 | `methodology_url` | string | `/methodology/{test-key}` (`REV-04`) |
@@ -763,8 +763,11 @@ service; every screen that shows two products side by side must call it.
   comparison — users compare the same row position across pages.
 - A row is rendered when **at least one** compared product has `state = present`.
 - Units are normalised **before** comparison: convert into the canonical unit of the
-  `unit_family`, then compare. Canonical units: length `mm`, mass `kg`, energy `Wh`, storage `GB`,
-  frequency `GHz`, sound `dB`, time `minutes`, ratio `%`, brightness `nits`, resolution `px`.
+  `unit_family` (5.5), then compare. Canonical units: length `mm`, mass `kg`, volume_energy `Wh`,
+  storage `GB`, frequency `GHz`, sound `dB`, time `minutes`, ratio `%`, brightness `nits`,
+  resolution `px`, temperature `°C`, colour_delta `ΔE`. `rate` (MB/s, IOPS, fps) and `count`
+  (points, ports, slots) are compared only when the unit matches — no conversion is applied
+  inside them.
   - Conversions required by observed data: inches ↔ mm, GB ↔ TB ↔ GiB, MB ↔ GB, mAh + V → Wh,
     MHz ↔ GHz, lbs ↔ kg, cm ↔ inches, minutes ↔ hours.
   - `1 GB = 1000 MB`, `1 GiB = 1024 MiB`; the label must show which family the vendor used when
@@ -841,7 +844,9 @@ URL contract:
 
 Rules:
 
-1. The path is the canonical identity of the set. Products appear in the order the user chose.
+1. The path identifies the set. Products appear in the order the user chose.
+   That order is what the share link preserves; the canonical form of the same set is defined in
+   rule 7 and differs from it only for reverse duplicates.
 2. `mode` and `cfg` are presentation parameters: the canonical URL of the page is the same path
    **without** them, and every one of these URLs must still render a complete comparison for a
    crawler.
@@ -853,9 +858,10 @@ Rules:
    restores the same comparison.
 6. `share_token` (`5.15`) is only needed for saved comparisons; a compare URL must work without a
    token, so a link never expires.
-7. Reverse-order duplicates (`b-vs-a`) are the same set: serve them with
-   `rel=canonical` pointing at the first-seen order, and let both render, so old links keep
-   working.
+7. Reverse-order duplicates (`b-vs-a`) are the same set: both orders render, so old links keep
+   working, and `rel=canonical` names the deterministic form of the set — the products sorted by
+   product id (decision 13) — never "the order someone requested first", which no crawler can
+   reproduce. The link the user copied (`CMP-10`) keeps the order they chose.
 
 ### 6.7 Add, remove and replace
 
@@ -1068,8 +1074,11 @@ game requirement (`SRCH-07`).
   - curated list: `ItemList` with positions and `itemListOrder`.
   - Never emit `FAQPage` or review markup for content the user cannot see.
 - **Canonical compare URLs** (`SEO-02`, `6.6`): one canonical per product set, order-normalised
-  for reverse duplicates, presentation params (`mode`, `cfg`) stripped, and `noindex` never
-  applied to a valid 2–4 product comparison — those are the site's strongest long-tail pages.
+  for reverse duplicates (product ids sorted, decision 13), presentation params (`mode`, `cfg`)
+  stripped. Indexation follows decision 14: a comparison opened or internally linked at least the
+  configured number of times is indexable and is one of the site's strongest long-tail pages;
+  every other valid 2–4 product comparison still renders for users and crawlers but is served
+  `noindex, follow` and kept out of the sitemaps.
 - **Canonical rules for lists** (`SEO-04`): sorted/filtered variants canonicalise to the
   unfiltered path; uncurated price amounts and deep facet combinations are `noindex, follow`
   and blocked from sitemaps.
@@ -1260,7 +1269,7 @@ owner later chooses otherwise, the default must be reversible without a data mig
 | 4 | Lab testing at launch | own lab from day 1 / published benchmarks first | **published benchmarks first (`provenance = published_benchmark`), own rig in phase 2** | You cannot buy a colourimeter and a noise box in phase 1; the schema and methodology pages must be ready for both |
 | 5 | Retailer data source | manual entry / feeds / affiliate APIs | **manual entry + one affiliate feed, refreshed daily**, with `observed_at` per offer | Ship `PRICE-01` without a partner contract |
 | 6 | Lowest-price tie-break | first retailer / cheapest ever / configurable | **configurable retailer priority, then freshest `observed_at`** | Order must be deterministic and explainable on the page |
-| 7 | User accounts in `MVP` | yes / no | **no** — anonymous compare tray and email-only alerts | Accounts are `Later`; nothing in `MVP` needs identity |
+| 7 | User accounts in `MVP` | yes / no | **no** — anonymous compare tray; when alerts ship (phase 2) they are email-only and need no account | Accounts are `Later`; nothing in `MVP` needs identity |
 | 8 | User reviews and comments in `MVP` | yes / no | **no** — show aggregates only | Requires moderation capacity the owner has not staffed |
 | 9 | Moderation model | pre-moderation / post-moderation | **pre-moderation** | Applies when `COMM-03`/`COMM-05` ship |
 | 10 | First alert channel | email / web push / messenger | **email** | Simplest to make reliable and auditable |
