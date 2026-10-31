@@ -16,7 +16,7 @@ import {
   type Filters,
 } from "../lib/facets";
 import { toUrlSearchParams, type NextSearchParams } from "../lib/params";
-import { breadcrumbJsonLd, type Crumb } from "../lib/seo";
+import { listJsonLd, type Crumb } from "../lib/seo";
 import { formatDate, formatRupees } from "../lib/format";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { FacetRail } from "./FacetRail";
@@ -86,7 +86,7 @@ export function CataloguePage({
       ? rows.filter((row) => row.brandSlug === brandSlug).length
       : rows.length;
   const filtered = listSize !== null && result.total !== listSize;
-  const jsonLd = breadcrumbJsonLd(crumbs);
+  const jsonLd = listJsonLd({ crumbs, rows: result.rows });
 
   return (
     <div className="catalogue">

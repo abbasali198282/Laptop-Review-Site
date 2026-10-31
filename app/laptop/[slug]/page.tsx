@@ -4,12 +4,12 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "../../../components/Breadcrumbs";
 import { ProductTabs } from "../../../components/ProductTabs";
 import { SpecValue } from "../../../components/SpecValue";
-import { formFactorLabels } from "../../../lib/config";
+import { formFactorLabels, market } from "../../../lib/config";
 import { loadProductBySlug, loadSpecValues } from "../../../lib/db";
 import { formatDate, formatRupees } from "../../../lib/format";
 import { pickQuickSpecs } from "../../../lib/specs";
 import { specGroups } from "../../../lib/spec-taxonomy";
-import { absoluteUrl, breadcrumbJsonLd } from "../../../lib/seo";
+import { absoluteUrl, breadcrumbNode, productNode } from "../../../lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -47,31 +47,19 @@ export default async function ProductPage({ params }: PageProps) {
     { label: product.brandName, href: `/laptops/${product.brandSlug}` },
     { label: `${product.modelName} (${product.modelCode})`, href: `/laptop/${product.slug}` },
   ];
-  const breadcrumb = breadcrumbJsonLd(crumbs);
+  const breadcrumb = breadcrumbNode(crumbs);
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Product",
-        name: product.displayName,
-        sku: product.modelCode,
-        mpn: product.modelCode,
-        brand: { "@type": "Brand", name: product.brandName },
-        category: "Laptop",
-        url: absoluteUrl(`/laptop/${product.slug}`),
-        ...(lowestOffer
-          ? {
-              offers: {
-                "@type": "Offer",
-                price: (lowestOffer.priceMinor / 100).toFixed(2),
-                priceCurrency: lowestOffer.currency,
-                availability: "https://schema.org/InStock",
-                url: absoluteUrl(`/laptop/${product.slug}`),
-              },
-            }
-          : {}),
-      },
-      { "@type": "BreadcrumbList", itemListElement: breadcrumb.itemListElement },
+      productNode({
+        slug: product.slug,
+        displayName: product.displayName,
+        modelCode: product.modelCode,
+        brandName: product.brandName,
+        priceMinor: lowestOffer?.priceMinor ?? null,
+        currency: lowestOffer?.currency ?? market.currency,
+      }),
+      breadcrumb,
     ],
   };
 

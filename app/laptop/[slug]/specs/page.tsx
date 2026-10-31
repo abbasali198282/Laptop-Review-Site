@@ -7,9 +7,10 @@ import { SpecHelp } from "../../../../components/SpecHelp";
 import { SpecValue } from "../../../../components/SpecValue";
 import { VariantSwitch } from "../../../../components/VariantSwitch";
 import { correctionHref } from "../../../../lib/corrections";
+import { market } from "../../../../lib/config";
 import { loadProductBySlug, loadSpecValues } from "../../../../lib/db";
 import { specGroups } from "../../../../lib/spec-taxonomy";
-import { absoluteUrl, breadcrumbJsonLd } from "../../../../lib/seo";
+import { absoluteUrl, breadcrumbNode, productNode } from "../../../../lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -47,20 +48,22 @@ export default async function ProductSpecsPage({ params }: PageProps) {
     { label: `${product.modelName} (${product.modelCode})`, href: `/laptop/${product.slug}` },
     { label: "Specifications", href: `/laptop/${product.slug}/specs` },
   ];
-  const breadcrumb = breadcrumbJsonLd(crumbs);
+  const breadcrumb = breadcrumbNode(crumbs);
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Product",
-        name: product.displayName,
-        sku: product.modelCode,
-        mpn: product.modelCode,
-        brand: { "@type": "Brand", name: product.brandName },
-        category: "Laptop",
-        url: absoluteUrl(`/laptop/${product.slug}/specs`),
-      },
-      { "@type": "BreadcrumbList", itemListElement: breadcrumb.itemListElement },
+      productNode(
+        {
+          slug: product.slug,
+          displayName: product.displayName,
+          modelCode: product.modelCode,
+          brandName: product.brandName,
+          priceMinor: null,
+          currency: market.currency,
+        },
+        `/laptop/${product.slug}/specs`,
+      ),
+      breadcrumb,
     ],
   };
 
