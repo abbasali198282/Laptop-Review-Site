@@ -17,7 +17,7 @@ import {
 } from "../lib/facets";
 import { toUrlSearchParams, type NextSearchParams } from "../lib/params";
 import { breadcrumbJsonLd, type Crumb } from "../lib/seo";
-import { formatDate } from "../lib/format";
+import { formatDate, formatRupees } from "../lib/format";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { FacetRail } from "./FacetRail";
 import { SortControl } from "./SortControl";
@@ -72,6 +72,12 @@ export function CataloguePage({
 
   const result = runCatalogueQuery(rows, scope);
   const fallbacks = fallbackLinks(rows);
+  // The band a budget route owns in its path; the empty state names it when no facet is active.
+  const bandLabel = priceRange
+    ? priceRange.minMinor === 0
+      ? `under ${formatRupees(priceRange.maxMinor)}`
+      : `between ${formatRupees(priceRange.minMinor)} and ${formatRupees(priceRange.maxMinor)}`
+    : undefined;
   // "N models of M": M is the list's own size. Budget routes are their own list, so they
   // only show the count of models inside the band.
   const listSize = priceRange
@@ -146,6 +152,7 @@ export function CataloguePage({
               chips={result.chips}
               narrowest={result.narrowest}
               fallbacks={fallbacks}
+              bandLabel={bandLabel}
             />
           ) : (
             <>

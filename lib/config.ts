@@ -20,7 +20,6 @@ export const market = {
   /** Highest amount the budget routes accept; anything above is outside the market config. */
   maxPriceMinor: rupee(300000),
   pageSize: 24,
-  siteName: "Laptop Review Site",
 } as const;
 
 /** Curated price bands; the crawlable set the budget routes and facet rail link to. */
@@ -50,10 +49,6 @@ export const sortOptions = [
 export type SortKey = (typeof sortOptions)[number]["key"];
 
 export const defaultSort: SortKey = "popular";
-
-export function isSortKey(value: string | undefined | null): value is SortKey {
-  return !!value && sortOptions.some((option) => option.key === value);
-}
 
 /** Canonical display order for CPU families, derived from the spec taxonomy order. */
 export const cpuFamilyOrder = [

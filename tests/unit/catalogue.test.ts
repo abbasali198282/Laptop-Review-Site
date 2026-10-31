@@ -11,7 +11,7 @@ import {
   sortRows,
   type CatalogueScope,
 } from "../../lib/catalogue";
-import { activeFilterChips, emptyFilters, hrefWith, parseFilters } from "../../lib/facets";
+import { activeFilterChips, emptyFilters, hrefWith, parseFilters, type Filters } from "../../lib/facets";
 import { loadCatalogueRows } from "../../lib/db";
 import { sampleRows } from "./helpers";
 
@@ -144,6 +144,57 @@ test("the empty state proposes removing the narrowest filter", () => {
     runCatalogueQuery(sampleRows, scope({ filters, basePath: "/laptops" })).narrowest?.href,
     narrowest?.href,
   );
+});
+
+test("a budget list's narrowest offer counts inside the route's own price band", () => {
+  // Only the ASUS A-1 row (8 GB, 512 GB) is under ₹40,000. Counting without the path band
+  // would say the storage filter hides two models; inside the band it hides exactly one.
+  const band = { minPriceMinor: 0, maxPriceMinor: 4000000 };
+  const query = parseFilters(new URLSearchParams("ram=8&storage=1024"));
+  const filters: Filters = { ...query, ...band };
+  const linkFilters: Filters = { ...filters, minPriceMinor: null, maxPriceMinor: null };
+  const result = runCatalogueQuery(sampleRows, {
+    basePath: "/laptops/price/under/40000",
+    filters,
+    sort: "popular",
+    page: 1,
+    linkFilters,
+  });
+
+  assert.equal(result.total, 0);
+  assert.equal(result.narrowest?.label, "Storage: 1 TB");
+  assert.equal(result.narrowest?.countAfterRemoval, 1);
+  assert.equal(result.narrowest?.href, "/laptops/price/under/40000?ram=8");
+
+  // Same query without the band: the count (2) is the whole-catalogue number, not this list's.
+  const unscoped = runCatalogueQuery(sampleRows, {
+    basePath: "/laptops/price/under/40000",
+    filters: linkFilters,
+    sort: "popular",
+    page: 1,
+  });
+  assert.notEqual(unscoped.narrowest?.countAfterRemoval, 1);
+});
+
+test("the seeded budget list gives the in-band recovery count, not the catalogue-wide one", () => {
+  // Reproduces /laptops/price/between/40000-60000?storage=1024&ram=16: no model in the band
+  // has a 1 TB drive, so dropping storage recovers the eight 16 GB models inside the band —
+  // not the 76 sixteen-GB models the whole catalogue holds.
+  const band = { minPriceMinor: 4000000, maxPriceMinor: 6000000 };
+  const query = parseFilters(new URLSearchParams("storage=1024&ram=16"));
+  const filters: Filters = { ...query, ...band };
+  const result = runCatalogueQuery(loadCatalogueRows(), {
+    basePath: "/laptops/price/between/40000-60000",
+    filters,
+    sort: "popular",
+    page: 1,
+    linkFilters: { ...filters, minPriceMinor: null, maxPriceMinor: null },
+  });
+
+  assert.equal(result.total, 0);
+  assert.equal(result.narrowest?.label, "Storage: 1 TB");
+  assert.equal(result.narrowest?.countAfterRemoval, 8);
+  assert.equal(result.narrowest?.href, "/laptops/price/between/40000-60000?ram=16");
 });
 
 test("a copied URL restores identical filters, page and order", () => {

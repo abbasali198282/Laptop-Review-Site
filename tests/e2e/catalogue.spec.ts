@@ -233,6 +233,28 @@ test("the budget lists render their own subset with header, model count and last
   await expect(page.getByTestId("model-count")).toHaveText(/16 models/);
   const bandPrices = await prices(page);
   expect(bandPrices.every((price) => price >= 40000 && price <= 60000)).toBe(true);
+
+  // An empty band names the band itself; it must not claim "0 filters" it never lists.
+  await page.goto("/laptops/price/under/5000");
+  await expect(page.getByTestId("empty-state")).toContainText("Nothing in this price band today");
+  await expect(page.getByTestId("empty-count")).toHaveText(
+    "0 laptops are priced under ₹5,000 right now.",
+  );
+  await expect(page.getByRole("link", { name: "See all price bands" })).toBeVisible();
+
+  // Facets on a budget list are counted inside the band: dropping storage recovers the eight
+  // 16 GB models of this band, not the 76 the whole catalogue holds.
+  await page.goto("/laptops/price/between/40000-60000?storage=1024&ram=16");
+  const narrowest = page.getByTestId("remove-narrowest");
+  await expect(narrowest).toHaveText("Remove Storage: 1 TB");
+  await expect(narrowest).toHaveAttribute(
+    "href",
+    "/laptops/price/between/40000-60000?ram=16",
+  );
+  await expect(page.getByTestId("empty-state")).toContainText("hiding 8 laptops");
+  await narrowest.click();
+  await expect(page.getByTestId("model-count")).toHaveText("8 models");
+
   expect(errors).toEqual([]);
 });
 

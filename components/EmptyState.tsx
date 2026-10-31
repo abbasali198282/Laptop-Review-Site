@@ -7,6 +7,8 @@ type EmptyStateProps = {
   chips: ActiveFilterChip[];
   narrowest: NarrowestFilter | null;
   fallbacks: FallbackLinks;
+  /** Price band the route fixes in its path (`under ₹40,000`), named when no facet is active. */
+  bandLabel?: string;
 };
 
 /**
@@ -14,16 +16,23 @@ type EmptyStateProps = {
  * offers a one-click removal of the filter that is actually emptying the list, plus fallback
  * entry links so the dead end has a way out.
  */
-export function EmptyState({ basePath, chips, narrowest, fallbacks }: EmptyStateProps) {
+export function EmptyState({ basePath, chips, narrowest, fallbacks, bandLabel }: EmptyStateProps) {
+  const hasFilters = chips.length > 0;
   return (
     <div className="empty-state" data-testid="empty-state">
-      <h2>No laptops match these filters</h2>
+      <h2>
+        {hasFilters || !bandLabel ? "No laptops match these filters" : "Nothing in this price band today"}
+      </h2>
       <p data-testid="empty-count">
-        <strong>0 laptops</strong> match the{" "}
-        {chips.length === 1 ? "filter" : `${chips.length} filters`} below.
+        <strong>0 laptops</strong>
+        {hasFilters
+          ? ` match the ${chips.length === 1 ? "filter" : `${chips.length} filters`} below.`
+          : bandLabel
+            ? ` are priced ${bandLabel} right now.`
+            : " match this list."}
       </p>
 
-      {chips.length > 0 ? (
+      {hasFilters ? (
         <>
           <h3>Active filters</h3>
           <ul className="active-filters" aria-label="Active filters">
@@ -52,9 +61,17 @@ export function EmptyState({ basePath, chips, narrowest, fallbacks }: EmptyState
         </p>
       ) : null}
 
-      <p>
-        <Link href={basePath}>Clear all filters</Link>
-      </p>
+      {hasFilters ? (
+        <p>
+          <Link href={basePath}>Clear all filters</Link>
+        </p>
+      ) : (
+        <p>
+          <Link className="button" href="/laptops">
+            See all price bands
+          </Link>
+        </p>
+      )}
 
       <div className="fallbacks">
         <section aria-labelledby="fallback-brands">

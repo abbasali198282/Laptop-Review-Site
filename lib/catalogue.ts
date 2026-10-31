@@ -14,6 +14,7 @@ import {
 } from "./config";
 import {
   activeFilterChips,
+  clearFacet,
   facetLabels,
   facetOrder,
   facetValueLabel,
@@ -360,6 +361,16 @@ export function sortRows(rows: CatalogueRow[], sort: SortKey): CatalogueRow[] {
 }
 
 /**
+ * The scope's filters with one chip taken out. The base is `scope.filters`, not the chip's own
+ * `removeFilters`: on a budget list the price band lives in the path, so it is missing from the
+ * chip state but must still narrow the count the empty state reports.
+ */
+function withoutChip(filters: Filters, chip: ActiveFilterChip): Filters {
+  if (chip.facet === "price" || chip.value === undefined) return clearFacet(filters, chip.facet);
+  return toggleFacetValue(filters, chip.facet, chip.value);
+}
+
+/**
  * The filter to offer removing in the empty state: the one whose removal recovers the most
  * models, i.e. the narrowest remaining filter. Ties keep rail order, so the offer is stable.
  */
@@ -371,7 +382,7 @@ export function narrowestFilter(
   if (chips.length === 0) return null;
   let best: NarrowestFilter | null = null;
   for (const chip of chips) {
-    const count = filterRows(rows, chip.removeFilters, scope.brandSlug).length;
+    const count = filterRows(rows, withoutChip(scope.filters, chip), scope.brandSlug).length;
     if (best === null || count > best.countAfterRemoval) {
       best = {
         facet: chip.facet,
@@ -466,8 +477,4 @@ export function runCatalogueQuery(rows: CatalogueRow[], scope: CatalogueScope): 
     brandNames,
     lastUpdated: latestUpdate(matched.length > 0 ? matched : scopedRows),
   };
-}
-
-export function totalPages(total: number): number {
-  return Math.max(1, Math.ceil(total / market.pageSize));
 }
