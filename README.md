@@ -3,7 +3,8 @@
 Browse a seeded catalogue of laptop models with manufacturer model codes, hardware and the
 current lowest price in INR, then open one laptop to read its identity header, quick specs,
 lowest-price callout and every recorded specification grouped into the vendor spec groups.
-This slice covers the catalogue list routes and the product/specs routes from `PROMPT.md`
+This slice covers the catalogue list routes, the product/specs routes and the crawl files
+(`/robots.txt`, `/sitemap.xml`) from `PROMPT.md`
 (slices of Phase 0 + Phase 1 item 1).
 
 ## Stack
@@ -53,14 +54,33 @@ so the catalogue is always present.
 | `/laptop/{slug}-{code}` | Product page: identity header with the printed manufacturer model code, release date and lowest-price callout, quick specs with units and qualifiers, and the spec-group outline. The stored slug is readable and ends with the URL-safe model code (`/laptop/asus-vivobook-15-x1504va-x1504va-nj521ws`) |
 | `/laptop/{slug}/specs` | Specs tab: every recorded spec grouped into General, Display, Processor, Graphics, Memory, Storage, Battery, Connectivity, Input, Audio, Software, Warranty, with per-row help, metric + imperial units, the three missing-value renderings, the conflicting-value warning and the variant switch. Empty groups ask for feedback |
 | `/corrections` | Data-correction form behind the conflicting-value warning and the empty spec groups; posts to `/api/corrections`, which writes one `pending` moderation item (no account needed) |
-| `/robots.txt`, `/sitemap.xml`, `/compare`, `/best` | **Not in this slice** (separate Issues from `PROMPT.md` §10) |
+| `/robots.txt` | `text/plain` crawl file: allows the site, keeps `/api/` out and names `http://host/sitemap.xml` |
+| `/sitemap.xml` | XML sitemap of every seeded product (`/laptop/{slug}`) plus the lists a visitor can open: `/laptops`, the 12 brand lists and the 5 curated budget bands, each with `<lastmod>` |
+| `/compare`, `/best` | **Not in this slice** (separate Issues from `PROMPT.md` §10) |
 
 Every facet, the custom min/max price, the sort and the page are URL parameters, so a copied
 URL restores the identical list. Filtered variants canonicalise to the unfiltered list and
-are served `noindex, follow` (`PROMPT.md` `SEO-04`); unfiltered list pages carry a
-`BreadcrumbList` JSON-LD block. Product pages carry a canonical URL plus `Product` and
-`BreadcrumbList` structured data. Price buckets, page size and facet labels live in
+are served `noindex, follow` (`PROMPT.md` `SEO-04`). Every list, brand and budget route ships
+one JSON-LD block with the visible `BreadcrumbList` and an `ItemList` of the `Product` cards
+it renders; the product page and the specs tab ship `Product` plus `BreadcrumbList` for
+their own canonical URL. Price buckets, page size and facet labels live in
 [`lib/config.ts`](lib/config.ts), not in templates.
+
+## Crawl surface
+
+- **Canonicals** (`SEO-04`) — a list route always canonicalises to its unfiltered path, and a
+  product route to itself; `/laptops?page=2`, `?sort=…` and every facet variant point at the
+  same canonical and are `noindex, follow` when filtered.
+- **Structured data** (`SEO-05`, `SEO-06`) — one `application/ld+json` block per page, built in
+  [`lib/seo.ts`](lib/seo.ts) from the same data the page renders: `BreadcrumbList` everywhere,
+  `Product` (name, brand, model code, current lowest price as an `Offer`) on product routes and
+  inside the list's `ItemList`.
+- **Sitemap** (`SEO-07`) — `/sitemap.xml` lists the 106 seeded products and the crawlable lists
+  (all laptops, every brand, the curated budget bands). Sorted, filtered and paged variants are
+  absent by design. Segmented `/sitemap-{type}-{n}.xml` files arrive with the comparison,
+  ranking and article slices that create that URL volume.
+- **robots.txt** (`route 4.1.32`) — points crawlers at `/sitemap.xml` and keeps the form
+  endpoint (`/api/`) out of the crawl.
 
 ## Spec values and their states
 
@@ -84,19 +104,22 @@ so the definition opens with the keyboard (`Tab`, `Enter`) and on tap, not hover
 ```bash
 npm run test:unit   # node:test via tsx: URL round-trip, filters, facet counts, sort,
                     # pagination, narrowest-filter, spec units/qualifiers/missing states,
-                    # seeded-database spec contract
+                    # JSON-LD nodes, sitemap entries and robots rules, seeded-database
+                    # spec contract
 npm run test:e2e    # Playwright against a real `next build` + `next start`
 ```
 
-The Playwright suites (`tests/e2e/catalogue.spec.ts`, `tests/e2e/product.spec.ts`) build and
-start the app on port 3104, then check the real flows: server-rendered grid, facet rail and
-sort control, a filtered URL reopened in a second tab (same filters, page and order), the
-empty state with its narrowest-filter removal, brand and budget headers with counts and
-dates, the product page opened from a catalogue card, the grouped spec sheet with the
-variant switch and the empty-group feedback link, the three missing-value renderings, the
-metric/imperial pairs and qualifiers, spec help reached by keyboard with Tab and Enter, and
-the correction form's success and rejected paths. Full-page screenshots are written to
-`.orbi/screenshots/`.
+The Playwright suites (`tests/e2e/catalogue.spec.ts`, `tests/e2e/product.spec.ts`,
+`tests/e2e/seo.spec.ts`) build and start the app on port 3104, then check the real flows:
+server-rendered grid, facet rail and sort control, a filtered URL reopened in a second tab
+(same filters, page and order), the empty state with its narrowest-filter removal, brand and
+budget headers with counts and dates, the product page opened from a catalogue card, the
+grouped spec sheet with the variant switch and the empty-group feedback link, the three
+missing-value renderings, the metric/imperial pairs and qualifiers, spec help reached by
+keyboard with Tab and Enter, the correction form's success and rejected paths, and the crawl
+surface: canonical link, breadcrumb trail and parsed JSON-LD on every list and product route,
+plus `/robots.txt` and a `/sitemap.xml` parsed as XML with `DOMParser`. Full-page screenshots
+are written to `.orbi/screenshots/`.
 
 The first run needs the browser binary: `npx playwright install chromium`. On a machine
 without the usual X/GTK/font shared libraries (as in this build container), the suite picks
