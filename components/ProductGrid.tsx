@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { CatalogueRow } from "../lib/types";
 import { formatPrice, formatStorage } from "../lib/format";
 import { formFactorLabels, gpuFamilyLabels, osLabels } from "../lib/config";
@@ -7,8 +8,9 @@ type ProductGridProps = {
 };
 
 /**
- * Server-rendered result grid (route 4.1.2). Cards are not links: `/laptop/{slug}` is a
- * different slice and a link to a route that does not exist yet is forbidden by §10.
+ * Server-rendered result grid (route 4.1.2). Each card links to its canonical product page
+ * (`/laptop/{slug}-{code}`), so the list is the real entry point into the identity header and
+ * spec sheet (routes 4.1.7, 4.1.9).
  */
 export function ProductGrid({ rows }: ProductGridProps) {
   return (
@@ -17,7 +19,11 @@ export function ProductGrid({ rows }: ProductGridProps) {
         <li key={row.productId}>
           <article className="laptop-card" data-testid="laptop-card" data-product-code={row.modelCode}>
             <p className="laptop-card__brand">{row.brandName}</p>
-            <h3>{row.modelName}</h3>
+            <h3>
+              <Link className="laptop-card__title-link" href={`/laptop/${row.slug}`}>
+                {row.modelName}
+              </Link>
+            </h3>
             <p className="laptop-card__code">
               Model code <code>{row.modelCode}</code>
             </p>
@@ -35,6 +41,11 @@ export function ProductGrid({ rows }: ProductGridProps) {
             <p className="laptop-card__price">
               <span className="visually-hidden">Lowest price: </span>
               {formatPrice(row.priceMinor)}
+            </p>
+            <p className="laptop-card__more">
+              <Link href={`/laptop/${row.slug}`}>
+                Full specs and price<span className="visually-hidden"> for {row.modelName}</span>
+              </Link>
             </p>
           </article>
         </li>
