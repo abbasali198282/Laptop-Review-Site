@@ -87,3 +87,63 @@ CREATE TABLE offer (
   updated_at   TEXT NOT NULL
 );
 CREATE INDEX offer_variant_idx ON offer (variant_id);
+
+-- Spec taxonomy (PROMPT.md §5.5): vendor spec groups and the comparable spec keys.
+CREATE TABLE spec_group (
+  key        TEXT PRIMARY KEY,
+  label      TEXT NOT NULL,
+  sort_order INTEGER NOT NULL,
+  category   TEXT NOT NULL DEFAULT 'laptop'
+);
+
+CREATE TABLE spec_key (
+  key               TEXT PRIMARY KEY,
+  group_key         TEXT NOT NULL REFERENCES spec_group (key),
+  label             TEXT NOT NULL,
+  value_type        TEXT NOT NULL,
+  unit              TEXT,
+  unit_family       TEXT,
+  direction         TEXT NOT NULL DEFAULT 'neutral',
+  comparable        INTEGER NOT NULL DEFAULT 1,
+  help_text         TEXT NOT NULL,
+  qualifier_buckets TEXT,
+  sort_order        INTEGER NOT NULL
+);
+CREATE INDEX spec_key_group_idx ON spec_key (group_key);
+
+-- One recorded spec value per product/variant and spec key (PROMPT.md §5.6).
+CREATE TABLE spec_value (
+  id           INTEGER PRIMARY KEY,
+  product_id   INTEGER REFERENCES product (id),
+  variant_id   INTEGER REFERENCES variant (id),
+  spec_key     TEXT NOT NULL REFERENCES spec_key (key),
+  state        TEXT NOT NULL,
+  value_number REAL,
+  value_text   TEXT,
+  value_bool   INTEGER,
+  unit         TEXT,
+  raw_value    TEXT,
+  source       TEXT NOT NULL,
+  source_url   TEXT,
+  confidence   TEXT NOT NULL DEFAULT 'unverified',
+  created_at   TEXT NOT NULL,
+  updated_at   TEXT NOT NULL,
+  CHECK (product_id IS NOT NULL OR variant_id IS NOT NULL)
+);
+CREATE INDEX spec_value_product_idx ON spec_value (product_id);
+CREATE INDEX spec_value_variant_idx ON spec_value (variant_id);
+
+-- Data-correction queue behind DB-14 / COMM-07 (no account required).
+CREATE TABLE moderation_item (
+  id              INTEGER PRIMARY KEY,
+  kind            TEXT NOT NULL,
+  product_id      INTEGER REFERENCES product (id),
+  spec_key        TEXT,
+  payload         TEXT NOT NULL,
+  state           TEXT NOT NULL DEFAULT 'pending',
+  resolution_note TEXT,
+  resolved_by     TEXT,
+  created_at      TEXT NOT NULL,
+  updated_at      TEXT NOT NULL
+);
+CREATE INDEX moderation_item_state_idx ON moderation_item (state);

@@ -1,0 +1,36 @@
+{
+  "note": "Explicit vendor spec sheets for the products that demonstrate a complete sheet on the specs tab. Values are entered from the manufacturer's published specifications; every product also gets the values derived from its variant row in data/laptops.json. `confidence: conflicting` marks a value the vendor sheet and a retailer listing disagree on.",
+  "sheets": [
+    {
+      "variantCode": "X1504VA-NJ521WS",
+      "source": "vendor_spec_sheet",
+      "sourceUrl": "https://www.asus.com/in/laptops/for-home/vivobook/asus-vivobook-15-x1504va/techspec/",
+      "values": [
+        { "specKey": "general.weight_kg", "state": "present", "valueNumber": 1.7, "unit": "kg", "rawValue": "1.70 kg", "confidence": "verified" },
+        { "specKey": "general.thickness_mm", "state": "present", "valueNumber": 19.9, "unit": "mm", "rawValue": "19.9 mm", "confidence": "verified" },
+        { "specKey": "display.resolution", "state": "present", "valueText": "1920 × 1080", "rawValue": "FHD (1920 x 1080)", "confidence": "verified" },
+        { "specKey": "display.panel_type", "state": "present", "valueText": "IPS-level", "rawValue": "IPS-level panel", "confidence": "verified" },
+        { "specKey": "display.refresh_rate_hz", "state": "present", "valueNumber": 60, "unit": "Hz", "rawValue": "60 Hz", "confidence": "conflicting" },
+        { "specKey": "display.brightness_max", "state": "present", "valueNumber": 250, "unit": "nits", "rawValue": "250 nits", "confidence": "verified" },
+        { "specKey": "processor.cores", "state": "present", "valueNumber": 10, "rawValue": "10 cores (2P + 8E)", "confidence": "verified" },
+        { "specKey": "memory.memory_type", "state": "not_disclosed", "confidence": "unverified" },
+        { "specKey": "memory.max_ram_gb", "state": "absent", "confidence": "verified" },
+        { "specKey": "storage.expandable", "state": "present", "valueBool": false, "rawValue": "No free M.2 slot", "confidence": "verified" },
+        { "specKey": "battery.capacity_wh", "state": "present", "valueNumber": 42, "unit": "Wh", "rawValue": "42 Wh", "confidence": "verified" },
+        { "specKey": "battery.rated_life", "state": "present", "valueText": "Up to 8 hours", "rawValue": "Upto 8 hours", "confidence": "verified" },
+        { "specKey": "battery.cells", "state": "present", "valueNumber": 3, "rawValue": "3-cell", "confidence": "verified" },
+        { "specKey": "battery.fast_charging", "state": "present", "valueBool": true, "rawValue": "65 W fast charging", "confidence": "verified" },
+        { "specKey": "connectivity.wifi", "state": "present", "valueText": "Wi-Fi 6 (802.11ax)", "rawValue": "Wi-Fi 6(802.11ax) (Dual band) 2*2", "confidence": "verified" },
+        { "specKey": "connectivity.bluetooth", "state": "present", "valueText": "Bluetooth 5.3", "rawValue": "Bluetooth 5.3", "confidence": "verified" },
+        { "specKey": "connectivity.usb_ports", "state": "present", "valueNumber": 3, "rawValue": "1x USB 3.2 Gen 1 Type-C, 2x USB 3.2 Gen 1 Type-A", "confidence": "verified" },
+        { "specKey": "connectivity.ethernet", "state": "absent", "confidence": "verified" },
+        { "specKey": "input.keyboard", "state": "present", "valueText": "Backlit chiclet keyboard with numeric keypad", "rawValue": "Backlit Chiclet Keyboard with Num-key", "confidence": "verified" },
+        { "specKey": "input.fingerprint_reader", "state": "absent", "confidence": "verified" },
+        { "specKey": "input.numeric_keypad", "state": "present", "valueBool": true, "confidence": "verified" },
+        { "specKey": "audio.speakers", "state": "present", "valueText": "Built-in stereo speakers", "rawValue": "Built-in speaker", "confidence": "verified" },
+        { "specKey": "audio.microphone", "state": "not_disclosed", "confidence": "unverified" },
+        { "specKey": "warranty.cover", "state": "present", "valueText": "1 year onsite warranty", "rawValue": "1 Year Onsite Warranty", "confidence": "verified" }
+      ]
+    }
+  ]
+}
